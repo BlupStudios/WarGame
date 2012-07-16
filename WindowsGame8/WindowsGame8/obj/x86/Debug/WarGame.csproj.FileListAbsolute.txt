@@ -1,0 +1,10 @@
+C:\Users\Ehud\Documents\Visual Studio 2010\Projects\WindowsGame8\WindowsGame8\WindowsGame8\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Ehud\Documents\Visual Studio 2010\Projects\WindowsGame8\WindowsGame8\WindowsGame8\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Ehud\Documents\Visual Studio 2010\Projects\WindowsGame8\WindowsGame8\WindowsGame8\bin\x86\Debug\Content\Territory.xnb
+C:\Users\Ehud\Documents\Visual Studio 2010\Projects\WindowsGame8\WindowsGame8\WindowsGame8\bin\x86\Debug\WindowsGame8.exe
+C:\Users\Ehud\Documents\Visual Studio 2010\Projects\WindowsGame8\WindowsGame8\WindowsGame8\bin\x86\Debug\WindowsGame8.pdb
+C:\Users\Ehud\Documents\Visual Studio 2010\Projects\WindowsGame8\WindowsGame8\WindowsGame8\obj\x86\Debug\WindowsGame8.exe
+C:\Users\Ehud\Documents\Visual Studio 2010\Projects\WindowsGame8\WindowsGame8\WindowsGame8\obj\x86\Debug\WindowsGame8.pdb
+C:\Users\Ehud\Documents\Visual Studio 2010\Projects\WindowsGame8\WindowsGame8\WindowsGame8\bin\x86\Debug\Content\Button.xnb
+C:\Users\Ehud\Documents\Visual Studio 2010\Projects\WindowsGame8\WindowsGame8\WindowsGame8\bin\x86\Debug\Content\MenuFont.xnb
+C:\Users\Ehud\Documents\Visual Studio 2010\Projects\WindowsGame8\WindowsGame8\WindowsGame8\bin\x86\Debug\Content\MenuText.xnb
