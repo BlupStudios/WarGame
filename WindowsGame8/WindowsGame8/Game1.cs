@@ -46,6 +46,7 @@ namespace WarGame
             // TODO: Add your initialization logic here
             GameState = State.Menu;
             this.IsMouseVisible = true;
+            TerrainCreation.Initialize();
             base.Initialize();
         }
 

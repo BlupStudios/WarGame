@@ -22,11 +22,15 @@ namespace WarGame
             
         }
 
-        public static void loadContent(ContentManager Content)
+        public static void Initialize()
         {
             terrain = new int[40, 20];
-            Territory = Content.Load<Texture2D>("Territory");
             MakeTerrain();
+        }
+
+        public static void loadContent(ContentManager Content)
+        {
+            Territory = Content.Load<Texture2D>("Territory");
         }
 
         public static void MakeTerrain()
