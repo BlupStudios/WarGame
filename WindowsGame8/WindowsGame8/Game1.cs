@@ -20,6 +20,8 @@ namespace WarGame
         SpriteBatch spriteBatch;
         Texture2D territory;
         State GameState;
+        MouseState oldState;
+        KeyboardState oldKey;
 
         public enum State{
             Menu,
@@ -66,12 +68,13 @@ namespace WarGame
             }
             else
             {
-                TerrainCreation.loadContent(Content,graphics);
+                TerrainCreation.loadContent(Content);
             }
         }
 
         protected override void UnloadContent()
         {
+            GC.Collect();
             Content.Unload();
         }
 
@@ -80,7 +83,7 @@ namespace WarGame
             KeyboardState key = Keyboard.GetState();
             if (GameState == State.Playing)
             {
-                if (key.IsKeyDown(Keys.Escape))
+                if (key.IsKeyDown(Keys.Escape) && oldKey.IsKeyDown(Keys.Escape) == false)
                 {
                     GameState = State.Pause;
                     UnloadContent();
@@ -89,19 +92,22 @@ namespace WarGame
             }
             else if (GameState == State.Pause)
             {
-                if (key.IsKeyDown(Keys.Escape))
+                if (key.IsKeyDown(Keys.Escape) && oldKey.IsKeyDown(Keys.Escape) == false)
                 {
                     GameState = State.Playing;
                     UnloadContent();
                     LoadContent();
                 }
             }else if(GameState == State.Menu){
-                if (key.IsKeyDown(Keys.Escape))
+                if (key.IsKeyDown(Keys.Escape) && oldKey.IsKeyDown(Keys.Escape) == false)
                     Exit();
             }
+
+            oldKey = key;
             // TODO: Add your update logic here
             MouseState mouse = Mouse.GetState();
-            if(mouse.LeftButton == ButtonState.Pressed){
+            if (mouse.LeftButton == ButtonState.Pressed && oldState.LeftButton != ButtonState.Pressed)
+            {
                 if (Menu.isMouseOnButton(mouse))
                 {
                     GameState = State.Playing;
@@ -109,6 +115,9 @@ namespace WarGame
                     LoadContent();
                 }
             }
+
+            oldState = mouse;
+
             base.Update(gameTime);
         }
 

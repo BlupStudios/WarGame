@@ -22,9 +22,9 @@ namespace WarGame
             
         }
 
-        public static void loadContent(ContentManager Content, GraphicsDeviceManager graphics)
+        public static void loadContent(ContentManager Content)
         {
-            terrain = new int[graphics.PreferredBackBufferWidth / 15 / 2, graphics.PreferredBackBufferHeight / 15 / 2];
+            terrain = new int[40, 20];
             Territory = Content.Load<Texture2D>("Territory");
             MakeTerrain();
         }
@@ -32,25 +32,34 @@ namespace WarGame
         public static void MakeTerrain()
         {
             Random rnd = new Random();
+            int player = rnd.Next(3) + 1;
+            int chanceToNewTerritory = 4;
+            //שורה ראשונה
             for (int i = 0; i < terrain.GetLength(0); i++)
             {
-                for (int j = 0; j < terrain.GetLength(1); j++)
-                {
-                    int player = rnd.Next(3) + 1;
-                    terrain[i,j] = player;
-                }
-            }
-        }
+                if(rnd.Next(chanceToNewTerritory) == 0)
+                    player = rnd.Next(3) + 1;
+                terrain[i, 0] = player;
 
-        public void FindEmpty()
-        {
-            for (int i = 0; i < terrain.GetLength(0)-1; i++)
+            }
+
+            //טור ראשון
+            for (int j = 1; j < terrain.GetLength(1); j++)
             {
-                for (int j = 0; j < terrain.GetLength(1)-1; j++)
+                if (rnd.Next(chanceToNewTerritory) == 0)
+                    player = rnd.Next(3) + 1;
+                terrain[0, j] = player;
+            }
+
+            //שאר המפה
+            for (int i = 1; i < terrain.GetLength(0); i++)
+            {
+                for (int j = 1; j < terrain.GetLength(1); j++)
                 {
-                    if(terrain[i,j] == terrain
+
                 }
             }
+
         }
 
         public static void drawBoard(SpriteBatch SpriteBatch)
