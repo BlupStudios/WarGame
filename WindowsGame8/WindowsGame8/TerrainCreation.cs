@@ -51,11 +51,27 @@ namespace WarGame
                 terrain[0, j] = player;
             }
 
+            int FromWhere;
             //שאר המפה
             for (int i = 1; i < terrain.GetLength(0); i++)
             {
                 for (int j = 1; j < terrain.GetLength(1); j++)
                 {
+                    if (terrain[i - 1, j] == terrain[i, j - 1])
+                        terrain[i, j] = terrain[i - 1, j];
+
+                    FromWhere = rnd.Next(3);
+                    if (FromWhere == 0)
+                    {
+                        player = rnd.Next(3) + 1;
+                        terrain[i, j] = player;
+                    }
+                    else if (FromWhere == 1)
+                        terrain[i, j] = terrain[i - 1, j];
+                    else
+                        terrain[i, j] = terrain[i, j - 1];
+
+
 
                 }
             }
